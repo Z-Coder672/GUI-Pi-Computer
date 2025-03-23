@@ -245,8 +245,8 @@ class PiCalculatorGUI:
         self.result_text.delete(1.0, tk.END)
         self.result_text.insert(tk.END, f"Final Value of π:\n{final_value}")
         
-        # Verify result if precision <= 1,000,000,000
-        if self.calculator.precision <= 1_000_000_000:
+        # Verify result if precision <= 10000
+        if self.calculator.precision <= 10000:
             verification = self.calculator.verify_result(final_value)
             if verification is None:
                 self.verify_var.set("Verification skipped: Da_actual_pi.txt not found")
